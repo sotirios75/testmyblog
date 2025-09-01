@@ -1,0 +1,162 @@
+/* ----- Ειδική Μορφοποίηση για τη σελίδα skills -----*/
+
+/* Στυλ για το main section */
+main section.skills-section {
+	padding: 2rem 0;
+}
+
+/* Στυλ για τον τίτλο h2 */
+main section.skills-section h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+/* Skills grid */
+.skills-grid {
+	list-style: none;
+	counter-reset: skill-counter;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.5rem;
+}
+
+/* Κάρτα skill */
+.skills-grid .skill-card {
+	counter-increment: skill-counter;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(102, 126, 234, 0.05));
+	margin-bottom: 2.5rem;
+	border-radius: 15px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(102, 126, 234, 0.2);
+	position: relative;
+	transition: all 0.4s ease;
+	overflow: hidden;
+	line-height: 1.8;
+	font-size: 1.05rem;
+	color: #444;
+	padding: 2rem 1.5rem;
+	text-align: left;
+}
+
+/* Αριθμός skill (κύκλος πάνω δεξιά) */
+.skills-grid .skill-card::before {
+	content: counter(skill-counter);
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 60px;
+	height: 60px;
+	background:  #667eea;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: white;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s ease;
+}
+
+/* Hover στο νούμερο */
+.skills-grid .skill-card:hover::before {
+	transform: scale(1.1) rotate(10deg);
+}
+
+/* Hover στην κάρτα */
+.skills-grid .skill-card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(102, 126, 234, 0.08));
+	border-color: rgba(102, 126, 234, 0.3);
+}
+
+/* Strong text */
+.skills-grid .skill-card strong {
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+/* Logo δίπλα στον τίτλο */
+.skill-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* απόσταση μεταξύ logo και τίτλου */
+}
+
+.skill-card img.skill-logo {
+    width: 40px;
+    height: auto;
+    vertical-align: middle;
+    position: static; /* δεν είναι πια absolute */
+}
+
+/* Responsive για tablet */
+@media (max-width: 768px) {
+    .skills-grid .skill-card {
+        padding: 2rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+    .skills-grid .skill-card::before {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        top: -5px;
+        right: -5px;
+    }
+    main section.skills-section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Responsive για κινητά */
+@media (max-width: 480px) {
+    .skills-grid .skill-card {
+        padding: 1.5rem 1rem;
+        border-radius: 15px;
+    }
+    .skills-grid .skill-card::before {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        top: -3px;
+        right: -3px;
+    }
+    main section.skills-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Button κάτω από περιγραφή */
+.skill-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.skill-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+
+
+
+
+

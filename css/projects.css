@@ -1,0 +1,262 @@
+/* ----- Ειδική Μορφοποίηση για τη σελίδα projects -----*/
+
+/* Στυλ για το main section */
+main section {
+	padding: 2rem 0; /* Εσωτερικό κενό πάνω-κάτω */
+}
+
+/* Στυλ για τον τίτλο h2 */
+main section h2 {
+    font-size: 2.2rem; /* Μέγεθος γραμματοσειράς */
+    text-align: center; /* Κέντρο ευθυγράμμιση κειμένου */
+    background: linear-gradient(45deg, #667eea, #764ba2); /* Χρώμα με gradient */
+    -webkit-background-clip: text; /* Κόβει το background στο σχήμα των γραμμάτων (Chrome/Safari) */
+    -webkit-text-fill-color: transparent; /* Κάνει το κείμενο διάφανο για να φανεί το gradient */
+    background-clip: text; /* Αντίστοιχο για άλλους browsers */
+    margin-bottom: 2.5rem; /* Κενό κάτω από τον τίτλο */
+    position: relative; /* Χρησιμοποιείται για pseudo-element ::after */
+}
+
+/* Μορφοποίηση της λίστας project-list */
+.project-list {
+	list-style: none; /* Βγάζει τα bullets */
+	counter-reset: project-counter; /* Μηδενίζει counter για αρίθμηση */
+	padding: 0; /* Καμία εσωτερική απόσταση */
+	margin: 0; /* Καμία εξωτερική απόσταση */
+}
+
+/* Στυλ για κάθε project */
+.project-list li {
+	counter-increment: project-counter; /* Αυξάνει τον counter κατά 1 */
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(102, 126, 234, 0.05)); /* Απαλό background */
+	margin-bottom: 2.5rem; /* Απόσταση ανάμεσα στις κάρτες */
+	border-radius: 15px; /* Στρογγυλεμένες γωνίες */
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Σκιά γύρω από την κάρτα */
+	backdrop-filter: blur(10px); /* Εφέ θολώματος στο background */
+	border: 1px solid rgba(102, 126, 234, 0.2); /* Λεπτό περίγραμμα */
+	position: relative; /* Για το ::before και ::after */
+	transition: all 0.4s ease; /* Ομαλή μετάβαση hover */
+	overflow: hidden; /* Κόβει οτιδήποτε βγαίνει έξω */
+}
+
+/* Αριθμός project (κύκλος πάνω δεξιά) */
+.project-list li::before {
+	content: counter(project-counter); /* Εμφανίζει τον αριθμό */
+	position: absolute; /* Απόλυτη θέση */
+	top: -10px; /* Στην κορυφή */
+	right: -10px; /* Στα δεξιά */
+	width: 60px; /* Διάμετρος κύκλου */
+	height: 60px;
+	background:  #667eea; /* Χρώμα φόντου */
+	border-radius: 50%; /* Κάνει τον κύκλο */
+	display: flex; /* Flexbox για κέντρο περιεχομένου */
+	align-items: center; /* Κάθετη στοίχιση */
+	font-size: 1.5rem; /* Μέγεθος αριθμού */
+	font-weight: bold; /* Έντονη γραφή */
+	color: white; /* Λευκός αριθμός */
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Σκιά κύκλου */
+	transition: transform 0.3s ease; /* Ομαλή κίνηση */
+}
+
+/* Hover στο νούμερο */
+.project-list li:hover:before {
+	transform: scale(1.1) rotate(10deg); /* Μεγαλώνει και γυρίζει */
+}
+
+/* Hover στην κάρτα */
+.project-list li:hover {
+	transform: translateY(-8px); /* Σηκώνεται προς τα πάνω */
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Πιο έντονη σκιά */
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(102, 126, 234, 0.08)); /* Απαλότερο background */
+	border-color: rgba(102, 126, 234, 0.3); /* Ενισχυμένο περίγραμμα */
+}
+
+/* Στυλ για strong+u (τίτλους μέσα στην κάρτα) */
+.project-list strong u {
+	text-decoration: none; /* Χωρίς υπογράμμιση */
+	background: linear-gradient(45deg, #667eea, #764ba2); /* Gradient */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text; /* Εμφάνιση gradient στο κείμενο */
+	font-size: 1.3rem;
+	position: relative;
+	padding: 10px;
+	margin-bottom: 30px;
+	margin-left: 20px;
+	margin-top: 30px;
+}
+
+/* Γραμμή κάτω από strong u */
+.project-list strong u::after {
+	content: ''; /* Κενό περιεχόμενο */
+	position: absolute;
+	bottom: -2px; /* 2px κάτω */
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(45deg, #667eea, #764ba2); /* Gradient γραμμή */
+	border-radius: 1px;
+}
+
+p {
+	margin-top: 1.5rem; /*Πάνω εσωτερικά περιθώρια*/
+	margin-left: 1.5rem; /*Αριστερά εσωτερικά περιθώρια*/
+	margin-bottom: 1.5rem; /*Κάτω εσωτερικά περιθώρια*/
+	margin-right: 1.5rem; /*Δεξιά εσωτερικά περιθώρια*/
+}
+
+/* Στυλ για παραγράφους στην κλάση project-list */
+.project-list p {
+	margin-top: 1.5rem; /*Πάνω εσωτερικά περιθώρια*/
+	margin-left: 1.5rem; /*Αριστερά εσωτερικά περιθώρια*/
+	margin-bottom: 1.5rem; /*Κάτω εσωτερικά περιθώρια*/
+	margin-right: 1.5rem; /*Δεξιά εσωτερικά περιθώρια*/
+}
+
+/* Απόσταση ανάμεσα στις γραμμές */
+.project-list li {
+	line-height: 1.8;
+}
+	
+/* Στυλ για links (κουμπιά) */
+.project-list a[href^="https"] {
+	display: inline-block; /* Να φαίνεται σαν κουμπί */
+	background: linear-gradient(45deg, #667eea, #764ba2);
+	color: white; /* Λευκά γράμματα */
+	padding: 0.75rem 1.5rem; /* Εσωτερικό κενό */
+	border-radius: 15px; /* Στρογγυλεμένες άκρες */
+	text-decoration: none; /* Χωρίς υπογράμμιση */
+	font-weight: 600; /* Έντονα γράμματα */
+	margin-top: 1rem;
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+	transition: all 0.3s ease; /* Ομαλή μετάβαση */
+	box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3); /* Σκιά κουμπιού */
+	position: relative;
+	overflow: hidden;
+}
+
+/* Προσθήκη εικονιδίου 🚀 πριν από τα links */
+.project-list a[href^="https"]::before {
+	content: '🚀';
+	margin-left: 0.5rem;
+}
+
+/* Εφέ γραμμής που περνάει μέσα από το κουμπί */
+.project-list a[href^="https"]::after {
+	content:''; /* Κενό */
+	position: absolute;
+	top: 0;
+	left: -100%; /* Εκτός οθόνης */
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), transparent);
+	transition: left 0.5s; /* Ομαλή κίνηση */
+}
+
+/* Όταν κάνεις hover η γραμμή κινείται */
+.project-list a[href^="https"]:hover::after {
+	left: 100%;
+}
+
+/* Hover στο κουμπί */
+.project-list a[href^="https"]:hover {
+	transform: translateY(-2px); /* Ανασηκώνεται λίγο */
+	box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4); /* Πιο έντονη σκιά */
+	background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+/* Για να μπορεί να μπει extra εφέ */
+.project-list li {
+    position: relative;
+}
+
+/* Μοτίβο background στις κάρτες */
+.project-list li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: 
+        radial-gradient(circle at 20px 20px, rgba(102, 126, 234, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 80px 80px, rgba(118, 75, 162, 0.1) 2px, transparent 2px);
+    background-size: 40px 40px; /* Επανάληψη μοτίβου */
+    border-radius: 0 20px 0 0;
+    opacity: 0.5; /* Διαφάνεια */
+    pointer-events: none; /* Δεν επηρεάζει clicks */
+    transition: opacity 0.3s ease;
+}
+
+/* Hover στο μοτίβο */
+.project-list li:hover::after {
+    opacity: 0.8;
+}
+
+/* Κείμενο στις κάρτες */
+.project-list li {
+    font-size: 1.05rem;
+    color: #444;
+}
+
+/* Στυλ για strong */
+.project-list strong {
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+/* Hover στις κάρτες (κρατά ίσια τις κάρτες) */
+.project-list li:hover {
+    transform: translateY(-8px) rotate(0deg);
+}
+
+/* Responsive για tablet */
+@media (max-width: 768px) {
+    .project-list li {
+        padding: 2rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .project-list li::before {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        top: -5px;
+        right: -5px;
+    }
+    
+    main section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .project-list strong u {
+        font-size: 1.1rem;
+    }
+    
+    .project-list a[href^="https"] {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Responsive για κινητά */
+@media (max-width: 480px) {
+    .project-list li {
+        padding: 1.5rem 1rem;
+        border-radius: 15px;
+    }
+    
+    .project-list li::before {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        top: -3px;
+        right: -3px;
+    }
+    
+    main section h2 {
+        font-size: 1.5rem;
+    }
+}
+
